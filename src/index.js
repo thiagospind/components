@@ -1,12 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import faker from 'faker';
+import CommentDetail from './CommentDetail';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const App = () => {
+  return (
+    <div className="ui container comments">
+        { /* No caso de um componente dentro de outro, usar o nome do componente como uma TAG JSX. */ }
+        <CommentDetail author="Sam"/>
+        <CommentDetail author="Alex"/>
+        <CommentDetail author="Jane"/>
+    </div>
+  );
+};
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(<App />, document.querySelector('#root'));
